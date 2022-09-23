@@ -1,5 +1,8 @@
 /public/hot
-/public/storage
+/public/storage/frameworks/cache/*
+/public/storage/frameworks/session/*
+/public/storage/frameworks/testing/*
+/public/storage/frameworks/views/*
 /storage/*.key
 .env.backup
 docker-compose.override.yml
@@ -90,6 +93,5 @@ deploy.php
 /vendor
 .env
 /public/.htaccess
-/storage
 storage/*.key
 /config/recaptcha.php
