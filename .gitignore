@@ -91,6 +91,5 @@ deploy.php
 #Laravel Specific files
 /vendor
 .env
-/public/.htaccess
 storage/*.key
 /config/recaptcha.php
