@@ -24,10 +24,10 @@ Dit project is getest op twee omgevingen:
 1. Run in cmd `composer install`
 1. Hernoem .env.example naar .env
 1. Run `php artisan key:generate`
-1. Maak een database aan genaamd `4s_manuals`
+1. Maak een database aan genaamd _4s_manuals_
 1. Run `php artisan migrate`
 1. Nu staat de structuur van je database. Je kunt nu een grote hoeveelheid testdata importeren om fatsoenlijk met de app te werken:
-    * Ga in phpMyAdmin naar de database `4s_manuals`
+    * Ga in phpMyAdmin naar de database _4s_manuals_
     * Ga naar importeren en kies het .sql-bestand uit de map van je project
     * Vink het knopje "Controle externe sleutelvelden" UIT
     * Importeer de data
