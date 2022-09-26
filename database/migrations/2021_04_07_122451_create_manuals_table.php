@@ -17,8 +17,8 @@ class CreateManualsTable extends Migration
             $table->id();
             $table->bigInteger('filesize');
             $table->text('originUrl');
-            $table->string('filename');
-            $table->string('downloadedServer');
+            $table->string('filename')->nullable();
+            $table->string('downloadedServer')->nullable();
             $table->timestamps();
         });
     }
