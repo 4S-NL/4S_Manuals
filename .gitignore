@@ -93,3 +93,4 @@ deploy.php
 .env
 storage/*.key
 /config/recaptcha.php
+storage/
