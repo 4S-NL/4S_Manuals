@@ -22,7 +22,7 @@ Dit project is getest op twee omgevingen:
 
 1. Clone de repo naar je lokale pc, zorg dat de repo komt in C:\laragon\www\4s_manuals
 1. Run in cmd `composer install`
-1. Hernoem .env.example naar .env
+1. Kopieer .env.example naar .env (niet hernoemen, want de .example moet je voor je teamgenoten blijven bestaan)
 1. Run `php artisan key:generate`
 1. Maak een database aan genaamd _4s_manuals_
 1. Run `php artisan migrate`
