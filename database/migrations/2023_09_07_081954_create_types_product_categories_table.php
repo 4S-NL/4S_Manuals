@@ -4,14 +4,12 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypesProductCategoriesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('types_product_categories', function (Blueprint $table) {
             $table->unsignedBigInteger('product_category_id')->nullable();
@@ -25,16 +23,9 @@ class CreateTypesProductCategoriesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('types_product_categories', function (Blueprint $table) {
-            $table->dropForeign(['product_category_id']);
-            $table->dropForeign(['type_id']);
-        });
-
         Schema::dropIfExists('types_product_categories');
     }
-}
+};

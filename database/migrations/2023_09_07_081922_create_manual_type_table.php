@@ -4,14 +4,12 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateManualTypeTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('manual_type', function (Blueprint $table) {
             $table->unsignedBigInteger('manual_id')->nullable();
@@ -26,16 +24,9 @@ class CreateManualTypeTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('manual_type', function (Blueprint $table) {
-            $table->dropForeign(['manual_id']);
-            $table->dropForeign(['type_id']);
-        });
-
-        Schema::dropIfExists('manuals_types');
+        Schema::dropIfExists('manual_type');
     }
-}
+};
