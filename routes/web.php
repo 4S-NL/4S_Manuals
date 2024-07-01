@@ -43,25 +43,16 @@ Route::get('/', function () {
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 
-Route::get('/manual/{language}/{brand_slug}/{type_slug}/', [RedirectController::class, 'type']);
-Route::get('/manual/{language}/{brand_slug}/{type_slug}/type.html', [RedirectController::class, 'type']);
-
 Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed']);
 
 // Locale routes
 Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale']);
 
-// List of types for a brand
-Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show'])->name('type_list');
-
-// List of manuals for a type
-Route::get('/{brand_id}/{brand_slug}/{type_id}/{type_slug}/', [TypeController::class, 'show'])->name('manual_list');
+// List of manuals for a brand
+Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
 
 // Detail page for a manual
-Route::get('/{brand_id}/{brand_slug}/{type_id}/{type_slug}/{manual_id}/', [ManualController::class, 'show']);
-
-// List of brands per product category
-Route::get('/category/{category_id}/{category_slug}/', [ProductCategoryController::class, 'show']);
+Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 'show']);
 
 // Generate sitemaps
 Route::get('/generateSitemap/', [SitemapController::class, 'generate']);

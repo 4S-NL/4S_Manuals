@@ -17,15 +17,6 @@ class RedirectController extends Controller
         return redirect()->route($url);
     }
 
-    public function type( $language, $brand_slug, $type_slug )
-    {
-        $brand = Brand::where('name',$brand_slug)->firstOrFail();
-        $type = Type::where('name',$type_slug)->firstOrFail();
-
-        $url = '/'.$brand->id.'/'.$brand->name.'/'.$type->id.'/'.$type->name.'/';
-        return redirect()->route($url);
-    }
-
     public function datafeed( $brand_slug )
     {
         $brand = Brand::where('name',$brand_slug)->firstOrFail();

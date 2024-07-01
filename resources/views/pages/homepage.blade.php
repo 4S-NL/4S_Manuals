@@ -43,7 +43,7 @@
                             ?>
 
                             <li>
-                                <a href="/{{ $brand->id }}/{{ $brand->name_url_encoded }}/">{{ $brand->name }}</a>
+                                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/">{{ $brand->name }}</a>
                             </li>
                         @endforeach
                     </ul>

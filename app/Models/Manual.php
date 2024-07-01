@@ -9,11 +9,6 @@ class Manual extends Model
 {
     use HasFactory;
 
-    public function types()
-    {
-        return $this->belongsToMany(Type::class);
-    }
-
     // Returns the filesize in a human readable format
     public function getFilesizeHumanReadableAttribute(){
 

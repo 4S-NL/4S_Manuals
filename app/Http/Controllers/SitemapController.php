@@ -27,11 +27,11 @@ class SitemapController extends Controller
             // create sitemap
             $sitemap_brand = App::make("sitemap");
 
-            $types = Type::where('brand_id', $brand->id )->get();
+            $manuals = Manual::where('brand_id', $brand->id )->get();
 
-            foreach($types as $type)
+            foreach($manuals as $manual)
             {
-                $sitemap_brand->add( $base_url.'/'.$brand->id.'/'.$brand->name.'/'.$type->id.'/'.$type->name.'/');
+                $sitemap_brand->add( $base_url.'/'.$brand->id.'/'.$brand->name.'/'.$manual->id.'/'.$manual->name.'/');
 
             }
 
