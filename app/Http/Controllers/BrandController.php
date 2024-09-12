@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brand;
-use App\Models\Type;
+use App\Models\Manual;
 
 class BrandController extends Controller
 {
@@ -12,11 +12,11 @@ class BrandController extends Controller
     {
 
         $brand = Brand::findOrFail($brand_id);
-        $types = Type::where('brand_id', $brand_id)->orderBy('name')->get();
+        $manuals = Manual::all()->where('brand_id', $brand_id);
 
-        return view('pages/type_list', [
-            "types"=>$types,
-            "brand"=>$brand
+        return view('pages/manual_list', [
+            "brand" => $brand,
+            "manuals" => $manuals
         ]);
 
     }

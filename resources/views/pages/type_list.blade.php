@@ -1,23 +1,21 @@
-@extends('layouts.default')
+<x-layouts.app>
 
-@section('breadcrumb')
-	<li><a href="/{{ $brand->id }}/{{ $brand->name_url_encoded }}/" alt="Manuals for '{{$brand->name}}'" title="Manuals for '{{$brand->name}}'">{{ $brand->name }}</a></li>
-@stop
+    <x-slot:breadcrumb>
+        <li><a href="/{{ $brand->id }}/{{ $brand->name_url_encoded }}/" alt="Manuals for '{{$brand->name}}'" title="Manuals for '{{$brand->name}}'">{{ $brand->name }}</a></li>
+    </x-slot:breadcrumb>
 
-@section('content')
+    <h1>{{ $brand->name }}</h1>
 
-<h1>{{ $brand->name }}</h1>
+    <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
-<p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
+        <div class="container">
+            <ul>
+            @foreach($types as $type)
+                <li>
+                    <a href="/{{ $brand->id }}/{{ $brand->name_url_encoded }}/{{ $type->id }}/{{ $type->name_url_encoded }}/">{{ $type->name }}</a>
+                </li>
+            @endforeach
+            </ul>
+        </div>
 
-    <div class="container">
-		<ul>
-		@foreach($types as $type)
-			<li>
-				<a href="/{{ $brand->id }}/{{ $brand->name_url_encoded }}/{{ $type->id }}/{{ $type->name_url_encoded }}/">{{ $type->name }}</a>
-			</li>
-		@endforeach
-		</ul>
-	</div>
-
-@stop
+</x-layouts.app>

@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include('includes.head')
-
-    @yield('head')
+    <x-head/>
 </head>
 <body>
 
-@include('includes.navbar')
+<x-navbar/>
 
 <div class="container">
     <div class="row">
 
         <div class="col-md-8">
-            @include('includes.header')
+            <x-header/>
 
             <ul class="breadcrumb">
                 <li><a href="/" title="{{ __('misc.home_alt') }}"
                        alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a></li>
-                @yield('breadcrumb')
+                {{ $breadcrumb ?? '' }}
             </ul>
 
             @if ( isset($_GET['q']) )
-                @include('includes.search_results')
+                <x-search_results/>
             @else
-                @yield('content')
+                {{ $slot }}
             @endif
 
             <ul class="breadcrumb">
                 <li>
 					<a href="/" title="{{ __('misc.home_alt') }}" alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a>
 				</li>
-                @yield('breadcrumb')
+                {{ $breadcrumb ?? '' }}
             </ul>
 
         </div>
 
         <div class="row">
-            @include('includes.footer')
+            <x-footer/>
         </div>
 
     </div>
