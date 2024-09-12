@@ -13,7 +13,6 @@
 
 -- Dumpen data van tabel steros.brands: ~100 rows (ongeveer)
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
-TRUNCATE TABLE `brands`;
 INSERT INTO `brands` (`id`, `created_at`, `updated_at`, `name`) VALUES
 	(1, NULL, NULL, 'BenQ'),
 	(2, NULL, NULL, 'Garmin'),
@@ -119,7 +118,6 @@ INSERT INTO `brands` (`id`, `created_at`, `updated_at`, `name`) VALUES
 
 -- Dumpen data van tabel steros.manuals: ~100 rows (ongeveer)
 /*!40000 ALTER TABLE `manuals` DISABLE KEYS */;
-TRUNCATE TABLE `manuals`;
 INSERT INTO `manuals` (`id`, `filesize`, `originUrl`, `filename`, `downloadedServer`, `created_at`, `updated_at`) VALUES
 	(1, 2234284, 'http://manualsonline.com/manuals/mfg/BenQ/9H.L8PLB.QPA.html', '84285170-664f-4a53-a9fd-21a8566b9df3.pdf', 'TransIP', NULL, NULL),
 	(2, 1908918, 'http://manualsonline.com/manuals/mfg/Garmin/DEZL560LMT.html', 'a6bbd04f-8442-4213-a272-735a16a3480b.pdf', 'TransIP', NULL, NULL),
@@ -225,7 +223,6 @@ INSERT INTO `manuals` (`id`, `filesize`, `originUrl`, `filename`, `downloadedSer
 
 -- Dumpen data van tabel steros.types: ~152 rows (ongeveer)
 /*!40000 ALTER TABLE `types` DISABLE KEYS */;
-TRUNCATE TABLE `types`;
 INSERT INTO `types` (`id`, `created_at`, `updated_at`, `name`, `brand_id`) VALUES
 	(1, NULL, NULL, '9H.L8PLB.QPA', 1),
 	(2, NULL, NULL, 'DEZL560LMT', 2),
@@ -383,7 +380,6 @@ INSERT INTO `types` (`id`, `created_at`, `updated_at`, `name`, `brand_id`) VALUE
 
 -- Dumpen data van tabel steros.manual_type: ~153 rows (ongeveer)
 /*!40000 ALTER TABLE `manual_type` DISABLE KEYS */;
-TRUNCATE TABLE `manual_type`;
 INSERT INTO `manual_type` (`manual_id`, `type_id`, `created_at`, `updated_at`) VALUES
 	(1, 1, NULL, NULL),
 	(2, 2, NULL, NULL),
@@ -541,7 +537,6 @@ INSERT INTO `manual_type` (`manual_id`, `type_id`, `created_at`, `updated_at`) V
 
 -- Dumpen data van tabel steros.product_categories: ~481 rows (ongeveer)
 /*!40000 ALTER TABLE `product_categories` DISABLE KEYS */;
-TRUNCATE TABLE `product_categories`;
 INSERT INTO `product_categories` (`id`, `created_at`, `updated_at`, `name`) VALUES
 	(1, NULL, NULL, 'Computer Monitor'),
 	(2, NULL, NULL, 'GPS Receiver'),
@@ -1028,7 +1023,6 @@ INSERT INTO `product_categories` (`id`, `created_at`, `updated_at`, `name`) VALU
 
 -- Dumpen data van tabel steros.types_product_categories: ~267 rows (ongeveer)
 /*!40000 ALTER TABLE `types_product_categories` DISABLE KEYS */;
-TRUNCATE TABLE `types_product_categories`;
 INSERT INTO `types_product_categories` (`product_category_id`, `type_id`, `created_at`, `updated_at`) VALUES
 	(1, 1, NULL, NULL),
 	(2, 2, NULL, NULL),
