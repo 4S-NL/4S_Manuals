@@ -1,6 +1,5 @@
-@extends('layouts.default')
-@section('content')
+<x-layouts.app>
 
-{{ __('messages.page_not_found') }}
+    {{ __('messages.page_not_found') }}
 
-@stop
+</x-layouts.app>

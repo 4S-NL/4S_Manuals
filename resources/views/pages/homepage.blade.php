@@ -1,17 +1,15 @@
-@extends('layouts.default')
+<x-layouts.app>
 
-@section('introduction_text')
-    <p><img src="img/afbl_logo.png" align="right" width="100" height="100">{{ __('introduction_texts.homepage_line_1') }}</p>
-    <p>{{ __('introduction_texts.homepage_line_2') }}</p>
-    <p>{{ __('introduction_texts.homepage_line_3') }}</p>
-@endsection
-
-@section('content')
+    <x-slot:introduction_text>
+        <p><img src="img/afbl_logo.png" align="right" width="100" height="100">{{ __('introduction_texts.homepage_line_1') }}</p>
+        <p>{{ __('introduction_texts.homepage_line_2') }}</p>
+        <p>{{ __('introduction_texts.homepage_line_3') }}</p>
+    </x-slot:introduction_text>
 
     <h1>
-        @section('title')
+        <x-slot:title>
             {{ __('misc.all_brands') }}
-        @show
+        </x-slot:title>
     </h1>
 
 
@@ -57,5 +55,4 @@
         </div>
 
     </div>
-
-@endsection
+</x-layouts.app>
