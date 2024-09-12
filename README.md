@@ -18,14 +18,14 @@ Dit project werkt alleen als je Laragon 6 draait met PHP 8.1.x en MySQL 8.x. Geb
 2. Run in cmd `composer install`
 3. Kopieer .env.example naar .env (niet hernoemen, want de .example moet je voor je teamgenoten blijven bestaan)
 4. Run `php artisan key:generate`
-5. Maak een database aan genaamd _4s_manuals_
 6. Run `php artisan migrate`
-7. Nu staat de structuur van je database. Je kunt nu de testdata importeren om fatsoenlijk met de app te werken:
+7. Als het script vraagt of er een database aangemaakt moet worden, kies dan yes.
+8. Nu staat de structuur van je database. Je kunt nu de testdata importeren om fatsoenlijk met de app te werken:
     * Ga in phpMyAdmin naar de database _4s_manuals_
     * Ga naar importeren en kies het _4s_manuals.sql_ bestand uit de hoofdmap van je project
     * Importeer de data
-8. Open het Laragon venster en klik bij Apache op _Reload_. Als er een windows beveiligingsvenster opent, klik dan op ja. 
-9. Ga naar 4s_manuals.test
+9. Open het Laragon venster en klik op stop, en daarna weer op start all. Als er een windows beveiligingsvenster opent, klik dan op ja. 
+10. Ga naar 4s_manuals.test
 
 
 
@@ -33,7 +33,7 @@ Dit project werkt alleen als je Laragon 6 draait met PHP 8.1.x en MySQL 8.x. Geb
 
 ### Files
 
-De pagina’s die aangepast moeten worden, zijn te vinden in `/resources/views`. **ELKE PAGINA** wordt opgebouwd in deze folder via `/layouts/default.blade.php`. Hoe dat werkt kun je vinden door het volgende hoofdstukje door te nemen van de documentatie: [https://laravel.com/docs/master/blade#layouts-using-template-inheritance](https://laravel.com/docs/master/blade#layouts-using-template-inheritance) Zodra je dat doorgenomen hebt, zou je moeten weten hoe je er achter kan komen waar het stukje HTML staat wat we aangepast willen hebben.
+De pagina’s die aangepast moeten worden, zijn te vinden in `/resources/views`. **ELKE PAGINA** wordt opgebouwd in deze folder via `/components/layouts/default.blade.php`. Hoe dat werkt kun je vinden door het volgende hoofdstukje door te nemen van de documentatie: [https://laravel.com/docs/master/blade#layouts-using-components](https://laravel.com/docs/master/blade#layouts-using-components) Zodra je dat doorgenomen hebt, zou je moeten weten hoe je er achter kan komen waar het stukje HTML staat wat we aangepast willen hebben.
 
 ### CSS
 
