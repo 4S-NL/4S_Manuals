@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <x-head/>
+    <title>Test</title>
 </head>
 <body>
 
